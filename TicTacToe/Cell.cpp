@@ -1,5 +1,4 @@
 #include "Cell.h"
-#include "Status.h"
 
 Cell::Cell(int posX, int posY)
 {
