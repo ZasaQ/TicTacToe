@@ -1,27 +1,25 @@
-#include "Board.h"
 #include <iostream>
+#include "Board.h"
 
 Board::Board()
 {
-	int temp = 0;
-	for (int i = 0; i < 3; i++)
+	for (int x = 0; x < 3; x++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int y = 0; y < 3; y++)
 		{
-			this->cells[i][j] = j + 1 + temp;
+			cells[x][y] = new Cell(x, y);
 		}
-		temp += 3;
 	}
 }
 
-void Board::WriteCells()
+void Board::DrawBoard()
 {
-	for (int i = 0; i < 3; i++)
+	for (int x = 0; x < 3; x++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int y = 0; y < 3; y++)
 		{
-			std::cout << this->cells[i][j];
+			printf("%c \t", cells[x][y]->GetStatus());
 		}
-		std::cout << std::endl;
-	}	
+		printf("\n");
+	}
 }

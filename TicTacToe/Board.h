@@ -1,13 +1,16 @@
 #pragma once
+#include "Cell.h"
+
 class Board
 {
-	int cells[3][3];
+	Cell* cells[3][3];
 
 public:
 
 	Board();
 
-	void WriteCells();
+	void DrawBoard();
+
 	
 	
 };

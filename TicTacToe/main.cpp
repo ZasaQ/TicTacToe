@@ -5,8 +5,8 @@ int main()
 {
 	Board b;
 
-	b.WriteCells();
-
+	
+	b.DrawBoard();
 
 	return 0;
 }
