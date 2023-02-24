@@ -5,7 +5,6 @@ int main()
 {
 	Board b;
 
-	b.InitCells();
 	b.WriteCells();
 
 

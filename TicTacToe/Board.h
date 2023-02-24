@@ -7,8 +7,6 @@ public:
 
 	Board();
 
-	void InitCells();
-
 	void WriteCells();
 	
 	
