@@ -1,17 +1,11 @@
 #pragma once
-//#include "Status.h"
-
-enum Status
-{
-	X = 'X', O = 'O', Empty = 'E'
-};
+#include "Status.h"
 
 class Cell
 {
 	int posX, posY;
 	bool bIsTaken;
 	Status status;
-	
 
 public:
 

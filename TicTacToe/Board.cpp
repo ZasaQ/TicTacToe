@@ -16,10 +16,11 @@ void Board::DrawBoard()
 {
 	for (int x = 0; x < 3; x++)
 	{
+		printf("|");
 		for (int y = 0; y < 3; y++)
 		{
-			printf("%c \t", cells[x][y]->GetStatus());
+			printf("|\t %c \t|", cells[x][y]->GetStatus());
 		}
-		printf("\n");
+		printf("|\n");
 	}
 }
