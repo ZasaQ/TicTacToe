@@ -5,15 +5,25 @@
 
 int main()
 {
-	Board b;
+	Board board;
 	std::string name;
-	char status;
+	char symbol;
 
-	std::cout << "Choose name and symbol: ";
+	/*std::cout << "First Player, choose name and symbol: \n";
 	std::cin >> name;
-	std::cin >> status;
+	std::cin >> symbol;
 
-	Player p1(name, status);
+	Player p1(name, symbol);
+	std::cout << std::endl;
+
+	std::cout << "Second Player, choose name and symbol: \n";
+	std::cin >> name;
+	std::cin >> symbol;
+
+	Player p2(name, symbol);
+	std::cout << std::endl;*/
+
+	board.DrawBoard();
 
 	return 0;
 }

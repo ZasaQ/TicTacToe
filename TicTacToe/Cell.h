@@ -3,16 +3,17 @@
 
 class Cell
 {
-	int posX, posY;
+	int position;
 	bool bIsTaken;
 	Status status;
 
 public:
 
-	Cell(int posX, int posY);
+	Cell(int position);
 
-	int GetPosX();
-	int GetPosY();
+	int GetPosition();
 	Status GetStatus();
+	void SetStatus(Status status);
+	void SetIsTaken();
 };
 

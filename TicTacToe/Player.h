@@ -6,16 +6,17 @@
 class Player
 {
 	std::string name;
-	Status status;
-
+	char symbol;
 
 public:
 
-	Player(std::string name, Status status)
+	Player(std::string name, char symbol)
 	{
 		this->name = name;
-		this->status = status;
-		printf("Player: %s with %c \n", *name, status);
+		this->symbol = symbol;
+		std::cout << "Player: " << name << " with symbol: " << symbol;
 	}
+
+	char GetSymbol();
 };
 

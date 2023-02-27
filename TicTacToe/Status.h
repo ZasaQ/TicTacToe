@@ -1,6 +1,8 @@
 #pragma once
 enum class Status
 {
-	X = 'X', O = 'O', Empty = 'E'
+	X = 'X', 
+	O = 'O', 
+	Empty = ' '
 };
 

@@ -1,24 +1,28 @@
 #include "Cell.h"
 
-Cell::Cell(int posX, int posY)
+Cell::Cell(int position)
 {
-	this->posX = posX;
-	this->posY = posY;
-	this->status = Empty;
+	this->position = position;
+	this->status = Status::Empty;
 	this->bIsTaken = false;
 }
 
-int Cell::GetPosX()
+int Cell::GetPosition()
 {
-	return posX;
-}
-
-int Cell::GetPosY()
-{
-	return posY;
+	return position;
 }
 
 Status Cell::GetStatus()
 {
 	return status;
+}
+
+void Cell::SetStatus(Status status)
+{
+	this->status = status;
+}
+
+void Cell::SetIsTaken()
+{
+	this->bIsTaken = true;
 }

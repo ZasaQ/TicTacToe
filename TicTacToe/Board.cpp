@@ -1,26 +1,23 @@
-#include <iostream>
 #include "Board.h"
 
 Board::Board()
 {
 	for (int x = 0; x < 3; x++)
 	{
-		for (int y = 0; y < 3; y++)
-		{
-			cells[x][y] = new Cell(x, y);
-		}
+		cells[x] = new Cell(x);
 	}
 }
 
 void Board::DrawBoard()
 {
-	for (int x = 0; x < 3; x++)
+	for (int x = 0; x < 9; x++)
 	{
-		printf("|");
-		for (int y = 0; y < 3; y++)
-		{
-			printf("|\t %c \t|", cells[x][y]->GetStatus());
-		}
-		printf("|\n");
+		printf("|\t %c \t|", cells[x]->GetStatus());
+		if (x % 3 == 0) printf("\n");
 	}
+}
+
+void Board::ChooseCell(Player p, int num)
+{
+
 }
