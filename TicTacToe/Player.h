@@ -6,14 +6,14 @@
 class Player
 {
 	std::string name;
-	char symbol;
+	Status symbol;
 
 public:
 
-	Player(std::string name, char symbol)
+	Player(std::string name, Status status)
 	{
 		this->name = name;
-		this->symbol = symbol;
+		this->symbol = status;
 		std::cout << "Player: " << name << " with symbol: " << symbol;
 	}
 

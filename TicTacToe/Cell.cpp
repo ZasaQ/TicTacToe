@@ -3,8 +3,8 @@
 Cell::Cell(int position)
 {
 	this->position = position;
-	this->status = Status::Empty;
 	this->bIsTaken = false;
+	this->status = Status::Empty;
 }
 
 int Cell::GetPosition()
@@ -24,5 +24,5 @@ void Cell::SetStatus(Status status)
 
 void Cell::SetIsTaken()
 {
-	this->bIsTaken = true;
+	bIsTaken = true;
 }

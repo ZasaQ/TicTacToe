@@ -16,4 +16,3 @@ public:
 	void SetStatus(Status status);
 	void SetIsTaken();
 };
-
