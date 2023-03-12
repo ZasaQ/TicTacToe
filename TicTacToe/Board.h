@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Cell.h"
 #include "Player.h"
+#include <iomanip>
 
 
 class Board

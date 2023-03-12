@@ -22,8 +22,8 @@ int main()
 
 	Player p2(name, symbol);
 	std::cout << std::endl;*/
+	
 
-	board.DrawBoard();
 
 	return 0;
 }

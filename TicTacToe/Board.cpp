@@ -1,5 +1,6 @@
 #include "Board.h"
 
+
 Board::Board()
 {
 	for (int x = 0; x < 9; x++)
@@ -10,9 +11,15 @@ Board::Board()
 
 void Board::DrawBoard()
 {
+	printf("+-----------------------------------------------+\n");
 	for (int x = 0; x < 9; x++)
 	{
-		printf("\t%c\t|", cells[x]->GetStatus());
-		if ((x + 1) % 3 == 0) printf("\n");
+		printf("|\t%c\t|", cells[x]->GetStatus());
+		if ((x + 1) % 3 == 0)
+		{
+			printf("\n");
+			printf("+-----------------------------------------------+\n");
+
+		}
 	}
 }
