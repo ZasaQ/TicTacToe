@@ -1,18 +1,23 @@
 #pragma once
-#include "Status.h"
+#include "CellStatus.h"
 
 class Cell
 {
 	int position;
 	bool bIsTaken;
-	Status status;
+	CellStatus status;
 
 public:
 
 	Cell(int position);
 
 	int GetPosition();
-	Status GetStatus();
-	void SetStatus(Status status);
+
+	CellStatus GetStatus();
+	char GetStatusInChar();
+
+	bool GetIsTaken();
+
+	void SetStatus(CellStatus status);
 	void SetIsTaken();
 };

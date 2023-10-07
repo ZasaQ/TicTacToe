@@ -1,27 +1,24 @@
 #include <iostream>
 #include "Board.h"
 #include "Player.h"
-#include "Status.h"
+#include "CellStatus.h"
+
+using std::cin;
+using std::cout;
 
 int main()
 {
 	Board board;
-	std::string name;
-	char symbol;
+	Player p1("p1", 'X');
+	Player p2("p2", 'O');
 
-	/*std::cout << "First Player, choose name and symbol: \n";
-	std::cin >> name;
-	std::cin >> symbol;
+	board.DrawBoard();
 
-	Player p1(name, symbol);
-	std::cout << std::endl;
+	while (board.GetGameStatus() == GameStatus::Playing)
+	{
 
-	std::cout << "Second Player, choose name and symbol: \n";
-	std::cin >> name;
-	std::cin >> symbol;
+	}
 
-	Player p2(name, symbol);
-	std::cout << std::endl;*/
 	
 
 

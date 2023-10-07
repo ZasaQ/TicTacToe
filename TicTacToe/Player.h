@@ -1,5 +1,4 @@
 #pragma once
-#include "Status.h"
 #include <iostream>
 #include <string>
 
@@ -14,9 +13,10 @@ public:
 	{
 		this->name = name;
 		this->symbol = symbol;
-		std::cout << "Player: " << name << " with symbol: " << symbol;
+		std::cout << "Player: " << name << " with symbol: " << symbol << "\n";
 	}
 
+	std::string GetName();
 	char GetSymbol();
 };
 

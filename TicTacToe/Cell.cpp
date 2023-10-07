@@ -4,7 +4,7 @@ Cell::Cell(int position)
 {
 	this->position = position;
 	this->bIsTaken = false;
-	this->status = Status::Empty;
+	this->status = CellStatus::Empty;
 }
 
 int Cell::GetPosition()
@@ -12,12 +12,22 @@ int Cell::GetPosition()
 	return position;
 }
 
-Status Cell::GetStatus()
+CellStatus Cell::GetStatus()
 {
 	return status;
 }
 
-void Cell::SetStatus(Status status)
+char Cell::GetStatusInChar()
+{
+	return (char)status;
+}
+
+bool Cell::GetIsTaken()
+{
+	return GetStatus() != CellStatus::Empty;
+}
+
+void Cell::SetStatus(CellStatus status)
 {
 	this->status = status;
 }
