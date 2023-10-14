@@ -5,7 +5,7 @@ std::string Player::GetName()
     return name;
 }
 
-char Player::GetSymbol()
+CellStatus Player::GetSymbol()
 {
     return symbol;
 }

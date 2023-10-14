@@ -28,12 +28,42 @@ void Board::DrawBoard()
 	printf("\n");
 }
 
-GameStatus Board::GetGameStatus()
+void Board::PickCell(Player* p)
+{
+	int CellIndex;
+	bool bPicked = false;
+
+	while (bPicked == false)
+	{
+		std::cout << "\n" << p->GetName() << ", choose cell:";
+		std::cin >> CellIndex;
+
+		if (CellIndex < 0 || CellIndex > 8)
+		{
+			printf("There is no such cell!\n");
+			continue;
+		}
+
+		if (!cells[CellIndex]->GetIsTaken())
+		{
+			cells[CellIndex]->SetIsTaken();
+			cells[CellIndex]->SetStatus(p->GetSymbol());
+			bPicked = true;
+		}
+		else
+		{
+			printf("\nThis Cell has been taken already");
+		}
+	}
+	
+}
+
+GameStatus Board::GetGameStatus() const
 {
 	return this->inGameStatus;
 }
 
-Cell* Board::GetCell(int i)
+Cell* Board::GetCell(int i) const
 {
 	if (i < 0 || i > 8)
 		std::abort();

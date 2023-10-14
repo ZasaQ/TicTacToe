@@ -16,8 +16,11 @@ public:
 	Board();
 
 	void DrawBoard();
-	GameStatus GetGameStatus();
-	Cell* GetCell(int i);
+
+	void PickCell(Player* p);
+	GameStatus GetGameStatus() const;
+	Cell* GetCell(int i) const;
+
 	
 	
 };
