@@ -10,15 +10,15 @@ class Player
 	CellStatus symbol;
 
 public:
+	Player();
+	Player(std::string name, CellStatus symbol);
 
-	Player(std::string name, CellStatus symbol)
-	{
-		this->name = name;
-		this->symbol = symbol;
-		std::cout << "Player: " << name << " with symbol: " << (char)symbol << "\n";
-	}
+	void InitPlayer();
 
 	std::string GetName();
 	CellStatus GetSymbol();
+
+	void SetName(std::string GivenName);
+	void SetSymbol(CellStatus GivenSymbol);
 };
 

@@ -9,15 +9,18 @@ using std::cout;
 int main()
 {
 	Board board;
-	Player* p1 = new Player("p1", CellStatus::X);
-	Player* p2 = new Player("p2", CellStatus::O);
+	Player* player1 = new Player();
+	Player* player2 = new Player();
+
+	player1->InitPlayer();
+	player2->InitPlayer();
 
 	while (board.GetGameStatus() == GameStatus::Playing)
 	{
 		board.DrawBoard();
-		board.PickCell(p1);
+		board.PickCell(player1);
 		board.DrawBoard();
-		board.PickCell(p2);
+		board.PickCell(player2);
 
 		//break;
 	}
