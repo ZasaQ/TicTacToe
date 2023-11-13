@@ -13,7 +13,8 @@ public:
 	Player();
 	Player(std::string name, CellStatus symbol);
 
-	void InitPlayer();
+	void InitFirstPlayer();
+	void InitSecondPlayer(Player* FirstPlayer);
 
 	std::string GetName();
 	CellStatus GetSymbol();

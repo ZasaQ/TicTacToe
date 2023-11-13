@@ -3,30 +3,34 @@
 #include "Player.h"
 #include "CellStatus.h"
 
-using std::cin;
-using std::cout;
-
 int main()
 {
 	Board board;
 	Player* player1 = new Player();
 	Player* player2 = new Player();
 
-	player1->InitPlayer();
-	player2->InitPlayer();
+	player1->InitFirstPlayer();
+	std::cout << std::endl;
+	player2->InitSecondPlayer(player1);
 
-	while (board.GetGameStatus() == GameStatus::Playing)
+	board.DrawBoard();
+
+	while (1)
 	{
-		board.DrawBoard();
 		board.PickCell(player1);
 		board.DrawBoard();
+		board.CheckGameStatus(player1);
+
+		if (board.GetGameStatus() != GameStatus::Playing)
+			break;
+
 		board.PickCell(player2);
+		board.DrawBoard();
+		board.CheckGameStatus(player2);
 
-		//break;
+		if (board.GetGameStatus() != GameStatus::Playing)
+			break;
 	}
-
-	
-
 
 	return 0;
 }

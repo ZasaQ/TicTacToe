@@ -10,24 +10,54 @@ Player::Player(std::string name, CellStatus symbol)
 	this->symbol = symbol;
 }
 
-void Player::InitPlayer()
+void Player::InitFirstPlayer()
 {
-	std::string name;
-	char symbol;
+	std::string Name;
+	char Symbol;
+	bool bIsPlayerSet = false;
 
 	printf("Player, choose your name and symbol (X/O)\nName: ");
-	std::cin >> name;
+	std::cin >> Name;
 
-	do
+	while (bIsPlayerSet == false)
 	{
 		printf("Symbol: ");
-		std::cin >> symbol;
-		if ((CellStatus)symbol != CellStatus::O && (CellStatus)symbol != CellStatus::X)
-			printf("Wrong symbol, must be X or O\n");
-	} while ((CellStatus)symbol != CellStatus::O && (CellStatus)symbol != CellStatus::X);
+		std::cin >> Symbol;
 
-	SetName(name);
-	SetSymbol((CellStatus)symbol);
+		if ((CellStatus)Symbol != CellStatus::O &&
+			(CellStatus)Symbol != CellStatus::X)
+		{
+			printf("Wrong symbol, must be X or O\n");
+			continue;
+		}
+
+		bIsPlayerSet = true;
+	}
+
+	SetName(Name);
+	SetSymbol((CellStatus)Symbol);
+}
+
+void Player::InitSecondPlayer(Player* FirstPlayer)
+{
+	if (FirstPlayer == nullptr)
+	{
+		printf("First player hasn't been initialized!");
+		return;
+	}
+
+	CellStatus FirstPlayerSymbol = FirstPlayer->GetSymbol();
+	std::string Name;
+
+	if (FirstPlayerSymbol == CellStatus::O)
+		this->SetSymbol(CellStatus::X);
+	else
+		this->SetSymbol(CellStatus::O);
+
+	printf("Second Player, your symbol is %c, please choose your name\nName:", this->GetSymbol());
+	std::cin >> Name;
+
+	this->SetName(Name);
 }
 
 std::string Player::GetName()
