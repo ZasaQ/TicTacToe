@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Board.h"
-#include "Player.h"
-#include "CellStatus.h"
+#include "HeaderFiles/Board.h"
+#include "HeaderFiles/Player.h"
+#include "HeaderFiles/CellStatus.h"
 
 int main()
 {
